@@ -12,6 +12,14 @@
 
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>BJJ Study Lab — Meta Study Platform</title>
+<meta name="theme-color" content="#ff6a2a">
+<meta name="application-name" content="BJJ Study Lab">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BJJ Study Lab">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+
 <style>
 :root{--bg:#07080c;--panel:#0e1118;--panel2:#141923;--line:#252b38;--txt:#f6f7fb;--muted:#8f9bad;--purple:#7c5cff;--green:#2bd7a4;--red:#ff647c}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(900px 450px at 50% -10%,#21164d,transparent 65%),var(--bg);color:var(--txt);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
@@ -461,5 +469,13 @@ document.addEventListener("DOMContentLoaded",()=>{
     if(!wrap.contains(e.target))popup.classList.remove("show")
   });
 });
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  });
+}
 </script>
 </body></html>
